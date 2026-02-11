@@ -57,7 +57,7 @@ EOT
       retention_monthly = optional(object({
         count       = number
         format_type = string
-        monthdays   = optional(set(string))
+        monthdays   = optional(set(number))
         weekdays    = optional(set(string))
         weeks       = optional(set(string))
       }))
@@ -68,7 +68,7 @@ EOT
       retention_yearly = optional(object({
         count       = number
         format_type = string
-        monthdays   = optional(set(string))
+        monthdays   = optional(set(number))
         months      = set(string)
         weekdays    = optional(set(string))
         weeks       = optional(set(string))
@@ -78,7 +78,7 @@ EOT
       }))
     })
     settings = object({
-      compression_enabled = optional(bool, false)
+      compression_enabled = optional(bool) # Default: false
       time_zone           = string
     })
   }))
