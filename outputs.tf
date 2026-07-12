@@ -1,3 +1,7 @@
+output "backup_policy_vm_workloads_id" {
+  description = "Map of id values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
+  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.id }
+}
 output "backup_policy_vm_workloads_name" {
   description = "Map of name values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
   value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.name }
