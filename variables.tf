@@ -43,7 +43,7 @@ EOT
     recovery_vault_name = string
     resource_group_name = string
     workload_type       = string
-    protection_policy = object({
+    protection_policy = list(object({
       backup = object({
         frequency            = optional(string)
         frequency_in_minutes = optional(number)
@@ -76,7 +76,7 @@ EOT
       simple_retention = optional(object({
         count = number
       }))
-    })
+    }))
     settings = object({
       compression_enabled = optional(bool) # Default: false
       time_zone           = string
