@@ -78,9 +78,17 @@ EOT
       }))
     }))
     settings = object({
-      compression_enabled = optional(bool) # Default: false
+      compression_enabled = optional(bool)
       time_zone           = string
     })
   }))
+  validation {
+    condition = alltrue([
+      for k, v in var.backup_policy_vm_workloads : (
+        length(v.protection_policy) >= 1
+      )
+    ])
+    error_message = "Each protection_policy list must contain at least 1 items"
+  }
 }
 
