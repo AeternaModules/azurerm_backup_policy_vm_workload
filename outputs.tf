@@ -1,29 +1,29 @@
 output "backup_policy_vm_workloads_id" {
   description = "Map of id values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
-  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.id }
+  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.id if v.id != null && length(v.id) > 0 }
 }
 output "backup_policy_vm_workloads_name" {
   description = "Map of name values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
-  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.name }
+  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.name if v.name != null && length(v.name) > 0 }
 }
 output "backup_policy_vm_workloads_protection_policy" {
   description = "Map of protection_policy values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
-  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.protection_policy }
+  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.protection_policy if v.protection_policy != null && length(v.protection_policy) > 0 }
 }
 output "backup_policy_vm_workloads_recovery_vault_name" {
   description = "Map of recovery_vault_name values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
-  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.recovery_vault_name }
+  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.recovery_vault_name if v.recovery_vault_name != null && length(v.recovery_vault_name) > 0 }
 }
 output "backup_policy_vm_workloads_resource_group_name" {
   description = "Map of resource_group_name values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
-  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.resource_group_name }
+  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.resource_group_name if v.resource_group_name != null && length(v.resource_group_name) > 0 }
 }
 output "backup_policy_vm_workloads_settings" {
   description = "Map of settings values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
-  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.settings }
+  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.settings if v.settings != null && length(v.settings) > 0 }
 }
 output "backup_policy_vm_workloads_workload_type" {
   description = "Map of workload_type values across all backup_policy_vm_workloads, keyed the same as var.backup_policy_vm_workloads"
-  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.workload_type }
+  value       = { for k, v in azurerm_backup_policy_vm_workload.backup_policy_vm_workloads : k => v.workload_type if v.workload_type != null && length(v.workload_type) > 0 }
 }
 
